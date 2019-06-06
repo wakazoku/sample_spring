@@ -1,4 +1,4 @@
-package zoku.sample.spring;
+package zoku.sample.spring.websample1;
 
 import java.io.IOException;
 import javax.servlet.ServletConfig;
@@ -8,8 +8,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.context.support.SpringBeanAutowiringSupport;
+
+import zoku.sample.spring.websample1.SampleBean;
 
 /**
  * Servlet implementation class SampleServlet
@@ -17,7 +19,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 @WebServlet("/sample")
 public class SampleServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	ApplicationContext app;
+	@Autowired
+	private SampleBean samplebean1;
 
 	/**
 	 * @see Servlet#init(ServletConfig)
@@ -25,7 +28,7 @@ public class SampleServlet extends HttpServlet {
 	@Override
 	public void init(ServletConfig config) throws ServletException {
 		super.init();
-		app = new ClassPathXmlApplicationContext("/spring/application-config.xml");
+		SpringBeanAutowiringSupport.processInjectionBasedOnCurrentContext(this);
 	}
 
 	/**
@@ -34,7 +37,6 @@ public class SampleServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		SampleBean samplebean1 = (SampleBean)app.getBean("samplebean1");
 		request.setAttribute("samplebean", samplebean1);
 		request.getRequestDispatcher("/index.jsp").forward(request, response);
 	}
@@ -46,7 +48,6 @@ public class SampleServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String message = request.getParameter("message");
-		SampleBean samplebean1 = (SampleBean)app.getBean("samplebean1");
 		samplebean1.addMessage(message);
 		response.sendRedirect("sample");
 	}

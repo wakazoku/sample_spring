@@ -7,6 +7,6 @@
 		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
 	<!-- Uncomment and add your base-package here: <context:component-scan base-package="org.springframework.samples.service"/> -->
-	<bean id="samplebean1" class="zoku.sample.spring.SampleBean"></bean>
+	<bean id="samplebean1" class="zoku.sample.spring.websample1.SampleBean"></bean>
 
 </beans>

@@ -1,4 +1,4 @@
-package zoku.sample.spring;
+package zoku.sample.spring.websample1;
 import java.util.ArrayList;
 import java.util.List;
 
