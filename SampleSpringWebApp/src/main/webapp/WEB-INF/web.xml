@@ -10,7 +10,7 @@
 	</context-param>
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>zoku.sample.spring.websample1.SampleBeanConfig</param-value>
+		<param-value>zoku.sample.spring.websample1.SampleBeanConfig2</param-value>
 	</context-param>
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener

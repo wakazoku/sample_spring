@@ -20,7 +20,7 @@ import zoku.sample.spring.websample1.SampleBean;
 public class SampleServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	@Autowired
-	private SampleBean samplebean1;
+	private SampleBean2 samplebean2;
 
 	/**
 	 * @see Servlet#init(ServletConfig)
@@ -37,7 +37,7 @@ public class SampleServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.setAttribute("samplebean", samplebean1);
+		request.setAttribute("samplebean", samplebean2);
 		request.getRequestDispatcher("/index.jsp").forward(request, response);
 	}
 
@@ -48,7 +48,7 @@ public class SampleServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String message = request.getParameter("message");
-		samplebean1.addMessage(message);
+		samplebean2.getBean().addMessage(message);
 		response.sendRedirect("sample");
 	}
 
