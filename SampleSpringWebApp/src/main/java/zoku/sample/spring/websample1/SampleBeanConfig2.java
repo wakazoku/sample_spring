@@ -21,4 +21,14 @@ public class SampleBeanConfig2 {
 		return new SampleApplicationListener();
 	}
 
+	@Bean
+	public SampleEventListener sampleEventListener() {
+		return new SampleEventListener();
+	}
+
+	@Bean
+	public SampleBeanEventService sampleBeanEventService() {
+		return new SampleBeanEventService();
+	}
+
 }

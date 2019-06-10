@@ -21,6 +21,9 @@ public class SampleServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	@Autowired
 	private SampleBean2 samplebean2;
+	
+	@Autowired
+	private SampleBeanEventService samplebeanservice;
 
 	/**
 	 * @see Servlet#init(ServletConfig)
@@ -48,7 +51,7 @@ public class SampleServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String message = request.getParameter("message");
-		samplebean2.getBean().addMessage(message);
+		samplebeanservice.doService(message);
 		response.sendRedirect("sample");
 	}
 
