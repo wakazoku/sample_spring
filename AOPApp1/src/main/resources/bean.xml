@@ -6,16 +6,8 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
-	<aop:config>
-		<aop:aspect id="mybeanaspect1" ref="aop1">
-			<aop:pointcut
-				expression="execution(* zoku.spring.sample.aop.IMyBean.addData(..))"
-				id="p1" />
-			<aop:before method="addDataBefore" pointcut-ref="p1" />
-		</aop:aspect>
-	</aop:config>
 
-
+	<aop:aspectj-autoproxy />
 	<bean id="bean1" class="zoku.spring.sample.aop.MyBean1"></bean>
 	<bean id="aop1" class="zoku.spring.sample.aop.MyBeanAspect"></bean>
 
