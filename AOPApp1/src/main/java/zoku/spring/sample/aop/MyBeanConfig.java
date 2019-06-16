@@ -18,4 +18,9 @@ public class MyBeanConfig {
 		return new MyBeanAspect();
 	}
 
+	@Bean
+	public MyBean2 bean2() {
+		return new MyBean2();
+	}
+
 }
