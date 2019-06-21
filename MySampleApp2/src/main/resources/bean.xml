@@ -8,18 +8,25 @@
 	<context:property-placeholder
 		location="classpath:bean.properties" />
 
+	<bean
+		class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+		<property name="propertyEditorRegistrars">
+			<list>
+				<bean class="zoku.sample.spring.sample2.MyProperEditorRegistar" />
+			</list>
+		</property>
+	</bean>
+
 	<bean id="bean1" class="zoku.sample.spring.sample2.MyBean">
-		<property name="message" value="${bean.message}" />
+		<property name="message" value="${bean.message}"></property>
+		<property name="date" value="${bean.date}"></property>
 	</bean>
 
 	<bean id="beankeeper1"
 		class="zoku.sample.spring.sample2.MyBeanKeeper">
 		<constructor-arg
 			type="zoku.sample.spring.sample2.MyBean" name="mybean" ref="bean1" />
-		<constructor-arg type="String" name="from"
-			value="${keeper.from}" />
-		<constructor-arg type="String" name="to"
-			value="${keeper.to}" />
+		<constructor-arg type="String" name="from" value="${keeper.from}" />
+		<constructor-arg type="String" name="to" value="${keeper.to}" />
 	</bean>
-
 </beans>
