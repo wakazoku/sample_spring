@@ -25,7 +25,7 @@ public class MyBean {
 
 	@Override
 	public String toString() {
-		return "MyBean [message=]" + message + ", date=" + date + "]";
+		return "MyBean [message=" + message + ", date=" + date + "]";
 	}
 
 }
