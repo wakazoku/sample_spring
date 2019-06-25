@@ -1,5 +1,5 @@
 # sample_spring
-Springの勉強用リポジトリ(stsで楽するバージョン)  
+Springの勉強用リポジトリ
 https://www.shuwasystem.co.jp/book/9784798053745.html
 
 ## 事前にインストールが必要な物
@@ -51,6 +51,16 @@ mvn versions:use-latest-versions
         <version>${spring-framework.version}</version>
     </dependency>
 </dependencies>
+```
+## ・pom.xmlではpackagingはjar指定なのに、failOnMissingWebXmlのエラーが表示され続けるときの対処
+以下の神記事で対処  
+https://qiita.com/k3286/items/1bc86cdbd58892d078a5
+```xml
+<packaging>war</packaging>
+
+<properties>
+  <failOnMissingWebXml>false</failOnMissingWebXml>
+</properties>
 ```
 
 ### ・Mavan > プロジェクトの更新をするとJavaのバージョンが落ちる…
