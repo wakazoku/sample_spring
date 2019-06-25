@@ -13,8 +13,10 @@ public class MyProperEditorRegistar implements PropertyEditorRegistrar {
 	@Override
 	public void registerCustomEditors(PropertyEditorRegistry registry) {
 		DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-		CustomDateEditor editor = new CustomDateEditor(format, false);
-		registry.registerCustomEditor(Date.class, editor);
+		CustomDateEditor dateEditor = new CustomDateEditor(format, false);
+		registry.registerCustomEditor(Date.class, dateEditor);
+		MyBeanTypeEditor myBeanEditor = new MyBeanTypeEditor();
+		registry.registerCustomEditor(MyBean.class, myBeanEditor);
 	}
 
 }

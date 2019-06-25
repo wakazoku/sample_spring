@@ -25,7 +25,7 @@
 	<bean id="beankeeper1"
 		class="zoku.sample.spring.sample2.MyBeanKeeper">
 		<constructor-arg
-			type="zoku.sample.spring.sample2.MyBean" name="mybean" ref="bean1" />
+			type="zoku.sample.spring.sample2.MyBean" name="mybean" value="this is MyBean!" />
 		<constructor-arg type="String" name="from" value="${keeper.from}" />
 		<constructor-arg type="String" name="to" value="${keeper.to}" />
 	</bean>
