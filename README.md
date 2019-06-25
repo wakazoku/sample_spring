@@ -62,6 +62,8 @@ https://qiita.com/k3286/items/1bc86cdbd58892d078a5
   <failOnMissingWebXml>false</failOnMissingWebXml>
 </properties>
 ```
+※本来はweb.xmlをどこかに配置してあげるのが正しいらしい  
+http://takunoji.hatenadiary.jp/entry/2016/01/10/093245
 
 ### ・Mavan > プロジェクトの更新をするとJavaのバージョンが落ちる…
 神降臨！以下を追加すると更新してもJavaのコンパイラのバージョンが固定される。  
