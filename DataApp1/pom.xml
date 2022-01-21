@@ -18,7 +18,7 @@
 		<hibernate.version>5.2.10.Final</hibernate.version>
 		
 		<!-- H2 database -->
-		<h2.version>1.4.196</h2.version>
+		<h2.version>2.1.210</h2.version>
 		
 		<!-- Logging -->
 		<logback.version>1.2.3</logback.version>
